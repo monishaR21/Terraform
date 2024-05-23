@@ -1,0 +1,16 @@
+
+{
+    "name": "Terraform Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "terraform": "latest"
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "hashicorp.terraform"
+        ]
+      }
+    }
+  }
+  
