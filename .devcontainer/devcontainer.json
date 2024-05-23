@@ -1,16 +1,17 @@
-
 {
-    "name": "Terraform Dev Container",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-      "terraform": "latest"
-    },
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "hashicorp.terraform"
-        ]
-      }
+  "name": "AWS and Terraform Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "terraform": "latest"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "amazonwebservices.aws-toolkit-vscode"
+      ]
     }
-  }
-  
+  },
+  "postCreateCommand": "apt-get update && apt-get install -y awscli",
+  "postStartCommand": "aws --version && terraform -version"
+}
